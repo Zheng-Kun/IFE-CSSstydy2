@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-15天</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <!--全局容器-->
+    <div id="global-box">
+
+        <!--左侧菜单部分-->
+        <div id="app-menu-box">
+            <div class="current-app" id="item1">
+                <i></i>
+                <a href=""></a>
+            </div>
+            <div id="item2">
+                <i></i>
+                <a href=""></a>
+            </div>
+            <div id="item3">
+                <i></i>
+                <a href=""></a>
+            </div>
+            <div id="add-app">
+                <!--<i></i>-->
+                <a href=""></a>
+            </div>
+
+            <div id="app-menu-bottom">
+                <a href="" class="app-grid"></a>
+                <a href="" class="app-setting"></a>
+            </div>
+        </div>
+
+        <!--左二导航部分-->
+        <nav id="nav-box">
+
+            <div id="nav-menu">
+                <h3 class="menu-title">
+                    <span>MENU</span>
+                    <a class="setting-icon" href="##"></a>
+                </h3>
+                <ul class="menu-list">
+                    <li><a href="##">Overview</a></li>
+                    <li><a href="##">Sales</a><i class="message-num">21</i></li>
+                    <li><a href="##">Your Staff</a></li>
+                    <li><a href="##">Analytics & Targeting</a></li>
+                    <li><a href="##">What's New</a></li>
+                </ul>
+            </div>
+
+            <div class="divider"></div>
+
+            <div id="nav-products">
+                <h3 class="menu-title">
+                    <span>YOUR PRODUCTS</span>
+                    <a class="setting-icon" href="##"></a>
+                </h3>
+                <ul class="menu-list">
+                    <li>
+                        <i id="books"></i>
+                        <a href="##">Books</a></li>
+                    <li>
+                        <i id="tutorials"></i>
+                        <a href="##">Tutorials</a></li>
+                    <li>
+                        <i id="stocks"></i>
+                        <a href="##">Stocks</a></li>
+                    <li>
+                        <i id="infographics"></i>
+                        <a href="##">Infographics</a></li>
+                </ul>
+            </div>
+
+            <div class="divider"></div>
+
+            <div id="nav-dashboard">
+                <h3 class="menu-title">
+                    <span>DASHBOARD</span>
+                    <a class="setting-icon" href="##"></a>
+                </h3>
+                <ul class="menu-list">
+                    <li class="current-menu"><a href="##">Messages</a><i class="message-num">54</i></li>
+                    <li><a href="##">Connections</a></li>
+                    <li  class="alert"><a href="##">Integrations</a></li>
+                    <li><a href="##">Account Settings</a></li>
+                    <li><a href="##">App Setting</a></li>
+                </ul>
+            </div>
+
+            <div id="monthly-goals">
+                <p>
+                    <span>Monthly Goals</span>
+                    <span class="current-reach">$580/$3200</span>
+                </p>
+                <div id="all-view">
+                    <div id="reach-view"></div>
+                </div>
+            </div>
+
+        </nav>
+
+        <!--右侧白色区域部分-->
+        <div id="message-box">
+
+            <!--白色头部部分-->
+            <header id="message-box-header">
+                <h2>Message</h2>
+                <div id="current-user-box">
+                    <div id="curret-user-face">
+                        <img src="images/Status.png" alt="status:online">
+                    </div>
+                    <div id="current-user-information">
+                        <p id="current-username">Jordan J.</p>
+                        <p id="user-category">Administrator</p>
+                    </div>
+                    <a href=""></a>
+                </div>
+            </header>
+
+
+            <!--白色左侧定宽部分-->
+            <div id="message-list-box">
+                <div id="message-search">
+                    <input type="text" placeholder="Search">
+                    <a class="search-icon"></a>
+                </div>
+
+                <ul id="message-list">
+
+                    <li class="current-message status-online">
+                        <div >
+                            <img src="images/user Face1.png" class="user-face" alt="user-face">
+                            <div class="user-information">
+                                <p>
+                                    <span class="username">Bessie Berry</span>
+                                    <span class="message-time">3m</span>
+                                </p>
+                                <p class="user-from">Twitter</p>
+                            </div>
+                        </div>
+
+                        <p class="message-summary">
+                            <sapn class="message-summary-content" >
+                                I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick, and stable... test test test
+                            </sapn>
+                            <span class="user-message-num">4</span>
+                        </p>
+                    </li>
+
+                    <li>
+                        <div >
+                            <img src="images/userFace2.png" class="user-face" alt="user-face">
+                            <div class="user-information">
+                                <p>
+                                    <span class="username">Victor Weber</span>
+                                    <span class="message-time">8m</span>
+                                </p>
+                                <p class="user-from">Adobe</p>
+                            </div>
+
+                        </div>
+                        <p class="message-summary">
+                            <sapn class="message-summary-content" >
+                                I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great...
+                            </sapn>
+                        </p>
+                    </li>
+
+                    <li>
+                        <div >
+                            <img src="images/userFace3.png" class="user-face" alt="user-face">
+                            <div class="user-information">
+                                <p>
+                                    <span class="username">Dustin Benson</span>
+                                    <span class="message-time">Yesterday</span>
+                                </p>
+                                <p class="user-from">Facebook</p>
+                            </div>
+                        </div>
+                        <p class="message-summary">
+
+                            <sapn class="message-summary-content" >
+                                If there is anyone who needs an invitation please add yourself in the comments of this post!
+                            </sapn>
+                        </p>
+                    </li>
+
+                    <li>
+                        <div >
+                            <img src="images/userFace4.png" class="user-face" alt="user-face">
+                            <div class="user-information">
+                                <p>
+                                    <sapn class="username">Jack Mason</sapn>
+                                    <span class="message-time">Yesterday</span>
+                                </p>
+                                <p class="user-from">Yahoo</p>
+                            </div>
+                        </div>
+                        <p class="message-summary">
+                            <sapn class="message-summary-content" >
+                                BruteDC is a peer-to-peer movie+tv series sharing and downloading platform which works on intranet inside...
+                            </sapn>
+                        </p>
+
+                    </li>
+
+                    <li>
+                        <div >
+                            <img src="images/userFace5.png" class="user-face" alt="user-face">
+                            <div class="user-information">
+                                <p>
+                                    <span class="username">Stenphen Shelton</span>
+                                    <span class="message-time">13 Jun</span>
+                                </p>
+                                <p class="user-from">Snapchat</p>
+                            </div>
+                        </div>
+                        <p class="message-summary">
+                            <sapn class="message-summary-content" >
+                                Yes, p2p traffic is often filtered (QoSed). Although i do use BT on O2 wires, and in good days dl speed...
+                            </sapn>
+                        </p>
+                    </li>
+
+                    <li>
+                        <div >
+                            <img src="images/userFace6.png" class="user-face" alt="user-face">
+                            <div class="user-information">
+                                <p>
+                                    <span class="username">Sally Willis</span>
+                                    <span class="message-time">12 Jun</span>
+                                </p>
+                                <p class="user-from">Twitter</p>
+                            </div>
+
+                        </div>
+                        <p class="message-summary">
+                            <sapn class="message-summary-content" >
+                                Yes, it's O2: 'internet extreme', which is no longer offered.
+                            </sapn>
+                        </p>
+                    </li>
+
+                    <li>
+                        <div >
+                            <img src="images/userFace7.png" class="user-face" alt="user-face">
+                            <div class="user-information">
+                                <p>
+                                    <span class="username">Robert Patton</span>
+                                    <span class="message-time">9 Jun</span>
+                                </p>
+                                <p class="user-from">A Team</p>
+                            </div>
+                        </div>
+                        <p class="message-summary">
+                            <sapn class="message-summary-content" >
+                                I change my service from this 4Mb plan to their much cheaper 8Mb plan, my speed will dramatically decrease.
+                            </sapn>
+                        </p>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!--白色右侧自适应部分-->
+            <div id="message-content-box">
+
+                <header id="message-content-header">
+                    <span id="current-message-username">Bessie Berry</span>
+                    <div id="message-operation-box">
+                        <span id="usual-operation">
+                            <a href="" id="add-friend-icon">
+                            </a><a href="" id="upload-icon">
+                        </a><a href="" id="delete-icon"></a>
+                        </span>
+
+                        <div id="operation-divider"></div>
+
+                        <span id="page-num">1 of 28</span>
+                        
+                        <span id="paging">
+                            <a href="" id="last-page">
+                            </a><a href="" id="next-page"></a>
+                        </span>
+                    </div>
+                </header>
+
+                <div id="complete-message-box">
+
+                    <div class="a-message">
+                        <img class="user-face" src="images/user Face1.png" alt="头像">
+                        <div class="message-text">
+                            <span class="username">Bessie Berry</span>
+                            <span class="update-time">8:31 AM</span>
+                            <div>
+                                <p>
+                                    Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="a-message">
+                        <img class="user-face" src="images/Current%20User%20Face.png" alt="头像">
+                        <div class="message-text">
+                            <span class="username">Jordan Jackson</span>
+                            <span class="update-time">8:31 AM</span>
+                            <div>
+                                <p>
+                                    I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gray-divider text-divider">
+                        <div></div>
+                        <span>Tuesday</span>
+                        <div></div>
+                    </div>
+
+                    <div class="a-message">
+                        <img class="user-face" src="images/user Face1.png" alt="头像">
+                        <div class="message-text">
+                            <span class="username">Bessie Berry</span>
+                            <span class="update-time">8:31 AM</span>
+                            <div>
+                                <p>
+                                    Funny comparison. so would the proper antivirus not slow down the internet as much or do you mean a freebie doenst protect the computer from viruses?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="a-message">
+                        <img class="user-face" src="images/Current%20User%20Face.png" alt="头像">
+                        <div class="message-text">
+                            <span class="username">Jordan Jackson</span>
+                            <span class="update-time">8:31 AM</span>
+                            <div>
+                                <p>
+                                    I pay for the 4Mb/sec down, 512 Kb/sec up service from O2, and haven't had any problems. In fact, it's relatively quick, and stable. It's not perfect, but I really don't have issues, as long as I keep track of what I'm doing on it. I max out at about 3 Mb/sec down, and 350 Kb/sec up. Probably because of a noisy telephone line, not because I'm being throttled. When my uploads go over 25 KB/sec (note, bytes, not bits), my download speed suffers. This is expected, as downloads require upload bandwidth as well.
+                                </p>
+                                <div class="message-image">
+                                    <img src="images/Photo1.png" alt="mountain">
+                                    <a class="open-image" href=""></a>
+                                </div>
+
+                                <div class="message-image">
+                                    <img src="images/photos2.png" alt="mountain">
+                                    <a class="open-image" href=""></a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blue-divider text-divider">
+                        <div></div>
+                        <span>New Message</span>
+                        <div></div>
+                    </div>
+
+                    <div class="a-message">
+                        <img class="user-face" src="images/user Face1.png" alt="头像">
+                        <div class="message-text">
+                            <span class="username">Bessie Berry</span>
+                            <span class="update-time">8:31 AM</span>
+                            <div>
+                                <p>
+                                    I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick, and stable. It's not perfect, but I really don't have issues, as long as I keep track of what I'm doing on it.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="add-message">
+                        <a href=""></a>
+                        <input type="text">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

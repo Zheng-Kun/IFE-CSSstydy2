@@ -1,0 +1,995 @@
+/*页面拉伸到视口大小*/
+html{
+    width: 100%;
+    height: 100%;
+
+    min-width: 1200px;
+    min-height: 400px;
+}
+body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+    font-family: "Proxima Nova";
+}
+@font-face {
+    font-family: "Proxima Nova";
+    src: url("../fontfamily/ProximaNova-Reg_0.otf");
+}
+
+/*-----------------各部分容器位置大小布局-----------*/
+/*注释代码为float实现方法*/
+#global-box{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-wrap: nowrap;
+}
+/*#global-box::after{
+    content: "";
+    height: 0;
+    display: table-cell;
+    clear: both;
+}*/
+#app-menu-box,
+#nav-box,
+#message-box{
+    height: 100%;
+    /*float: left;*/
+
+    /*溢出自动显示滚动条*/
+    overflow: auto;
+}
+
+#app-menu-box{
+    width: 100px;
+}
+
+#nav-box{
+    width: 250px;
+}
+
+#message-box{
+    width: calc(100% - 350px);
+}
+
+#message-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+#message-box-header{
+    height: 80px;
+    width: 100%;
+}
+#message-list-box{
+    width: 400px;
+    height: calc(100% - 80px);
+}
+#message-content-box{
+    width: calc(100% - 400px);
+    height: calc(100% - 80px);
+}
+
+/*------------------应用菜单(第一列)样式-------------------*/
+#app-menu-box{
+    background-color: rgb(29,37,49);
+}
+#item1,
+#item2,
+#item3{
+    width: 100%;
+    height: 60px;
+    margin: 20px 0;
+
+    position: relative;
+}
+/*提示小三角样式*/
+#app-menu-box i{
+    height: 0;
+    width: 0;
+
+    position: absolute;
+    top: calc(50% - 2px);
+
+    display: none;
+    border-left: rgb(35,153,242) solid 4px;
+    border-top: transparent solid 4px;
+    border-bottom: transparent solid 4px;
+
+}
+/*当前应用显示小三角*/
+#app-menu-box .current-app i{
+    display: inline-block;
+}
+/*应用图标*/
+#app-menu-box a{
+    height: 60px;
+    width: 60px;
+    margin: 0 20px;
+
+    display: inline-block;
+    border-radius: 50%;
+}
+#app-menu-bottom a{
+    border-radius: 0;
+}
+#app-menu-box a:hover{
+    -webkit-box-shadow: rgba(255,255,255,0.5) 0 0  20px;
+    -moz-box-shadow: rgba(255,255,255,0.5) 0 0  20px;
+    box-shadow: rgba(255,255,255,0.5) 0 0  20px;
+}
+#item1 a{
+    background: url("../images/Item 1.png") no-repeat 100% 100%;
+}
+#item2 a{
+    background: url("../images/Item 2.png") no-repeat 100% 100%;
+}
+#item3 a{
+    background: url("../images/Item 3.png") no-repeat 100% 100%;
+}
+#add-app a{
+    background: url("../images/Add App.png") no-repeat 100% 100%;
+}
+
+/*底部按钮*/
+#app-menu-box{
+    position: relative;
+}
+#app-menu-bottom{
+    width: 100%;
+    height: 16px;
+
+    margin-bottom: 20px;
+    padding: 0 26px;
+
+    box-sizing: border-box;
+
+    position: absolute;
+    bottom: 0;
+}
+#app-menu-bottom a,
+#app-menu-bottom a{
+    margin: 0;
+    height: 16px;
+    width: 16px;
+
+    display: block;
+    float: left;
+
+    background-size: cover;
+}
+#app-menu-bottom::after{
+    content: '';
+    display: table-cell;
+    height: 0;
+    clear: both;
+}
+#app-menu-bottom .app-grid{
+    background: url("../images/Grid.png");
+}
+#app-menu-bottom .app-setting{
+    margin-left: 16px;
+    background: url("../images/Settings.png");
+}
+
+
+
+
+
+/*-----------------------导航块(第二列)样式-------------------*/
+
+#nav-box{
+    padding: 17px 30px;
+
+    background: rgb(34,44,60);
+}
+
+/*分割线*/
+.divider{
+    width: 100%;
+    height: 0;
+    margin: 30px 0;
+
+    border-top: rgb(42, 53, 71) 1px solid;
+}
+
+/*菜单标题*/
+.menu-title{
+    font-size: 12px;
+    color: rgb(91, 103, 121);
+    text-transform: uppercase;
+    line-height: 3.333;
+    text-align: left;
+}
+.menu-title a{
+    width: 16px;
+    height: 16px;
+    margin: 12px 0;
+
+    vertical-align: center;
+
+    display:inline-block;
+    float: right;
+
+    background: url("../images/Settings.png") no-repeat;
+}
+
+/*链接样式*/
+.menu-list li{
+    list-style: none;
+}
+.menu-list a{
+    line-height: 2.571;
+
+    display: inline-block;
+
+    font-size: 14px;
+    color: rgb(183, 192, 205);
+    text-align: left;
+}
+.menu-list a:link,
+.menu-list a:visited{
+    text-decoration: none;
+}
+.menu-list a:hover,
+.menu-list a:active{
+    text-decoration: underline;
+    font-weight: bold;
+    color: #ffffff;
+}
+/*当前菜单链接*/
+.current-menu a{
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/*当前菜单的小三角*/
+.menu-list li{
+    position: relative;
+}
+.menu-list li::before{
+    content: " ";
+    display: none;
+
+    height: 0;
+    width: 0;
+
+    position: relative;
+
+    right: 30px;
+
+    border-left: rgb(35,153,242) solid 4px;
+    border-top: transparent solid 4px;
+    border-bottom: transparent solid 4px;
+}
+/*显示小三角*/
+#nav-box .current-menu::before{
+    display: inline-block;
+}
+
+
+/*nav-products部分图标样式*/
+#nav-products i{
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+
+    margin-right: 14px;
+    vertical-align: middle;
+
+    background-size: 16px auto;
+}
+#books{
+    background:url("../images/Book of Wisdom.png") no-repeat;
+}
+#tutorials{
+    background: url("../images/Video Camera.png") no-repeat;
+}
+#stocks{
+    background: url("../images/Painting.png") no-repeat;
+}
+#infographics{
+    background: url("../images/Chart.png") no-repeat;
+}
+/*消息数量提示气泡*/
+.message-num{
+
+    position: absolute;
+    line-height: 24px;
+    right: 0;
+    top: 8px;
+
+    display: inline-block;
+    box-sizing: content-box;
+
+    border:rgb(35,152,240) solid;
+    border-width: 0 8px;
+    border-radius: 12px;
+
+    background:rgb(35,152,240) ;
+    font-size: 14px;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+/*alert气泡*/
+.alert::after{
+    content: ' ';
+    display: inline-block;
+    height:24px;
+    width: 24px;
+
+    margin: 5px 0;
+    vertical-align: baseline;
+
+    float: right;
+
+    background:url("../images/Alert Icon.png") no-repeat;
+}
+
+/*nav部分底部固定部分*/
+#nav-box{
+    /*position: relative;*/
+}
+/*webkit滚动条*/
+#nav-box::-webkit-scrollbar{
+    visibility: visible;
+    width: 4px;
+    background: #222C3C;
+    border-radius: 2px;
+}
+#nav-box::-webkit-scrollbar-thumb{
+    background: #2398F0;
+    border-radius: 2px;
+}
+
+/*第二部分底部容器*/
+#monthly-goals{
+    margin: 0 -30px;
+    padding:23px 30px;
+    width: 250px;
+
+    position: absolute;
+    bottom: 0;
+
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+
+    background:  rgb(34,44,60);
+}
+#monthly-goals p{
+    padding: 0 2px;
+    margin-bottom: 13px;
+}
+/*进度数值*/
+.current-reach{
+    float: right;
+}
+/*进度条容器*/
+#all-view{
+    width: 100%;
+    height: 4px;
+
+    border-radius: 2px;
+
+    background: rgb(45,56,72);
+}
+/*进度条*/
+#reach-view {
+    width: 18.125%;
+    height: 100%;
+
+    border-radius: 2px;
+
+    background-image: -moz-linear-gradient( 0deg, rgb(127,91,230) 1%, rgb(157,143,227) 100%);
+    background-image: -webkit-linear-gradient( 0deg, rgb(127,91,230) 1%, rgb(157,143,227) 100%);
+    background-image: -ms-linear-gradient( 0deg, rgb(127,91,230) 1%, rgb(157,143,227) 100%);
+}
+
+
+
+/*------------------------------右侧message的header部分------------------------------*/
+#message-box-header{
+    position: relative;
+
+    border-bottom: rgb(230, 233, 236) 1px solid;
+}
+#message-box-header h2{
+    padding-left: 30px;
+
+    font-size: 24px;
+    color: rgb(53, 64, 82);
+    line-height:80px;
+    text-align: left;
+    font-weight: normal;
+}
+#current-user-box{
+    position: absolute;
+
+    height: 100%;
+    top: 0;
+    right: 0;
+
+    display: inline-block;
+}
+/*用户信息样式*/
+#current-user-information{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    float: left;
+}
+#current-user-information p{
+    margin: 2px 0;
+}
+#current-username{
+    font-size: 16px;
+    color: rgb(35, 153, 241);
+    line-height: 1.2;
+}
+#user-category{
+    font-size: 14px;
+    color: rgb(181, 181, 181);
+    line-height: 1.2;
+}
+/*用户头像*/
+#curret-user-face{
+    display: inline-block;
+    height: 58px;
+    width: 58px;
+    margin: 11px;
+    border: 2px white solid;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    
+    float: left;
+
+    background: url("../images/Current User Face.png");
+    background-size: 100% 100%;
+}
+/*状态图标*/
+#curret-user-face img{
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 14px;
+    height: 14px;
+    
+    position: relative;
+    top: 32px;
+    left: 32px;
+    
+    border: 4px white solid;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    background-color: white;
+}
+/*用户展开按钮*/
+#current-user-box > a{
+    display: inline-block;
+    width: 11px;
+    height: 7px;
+
+    margin: 35px 30px;
+
+    float: right;
+    
+    background: url("../images/dropdown.png");
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+/*-----------------------------------消息列表---------------------------*/
+/*包裹容器*/
+#message-list-box{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+/*webkit滚动条*/
+#message-list-box::-webkit-scrollbar{
+    visibility: visible;
+    width: 4px;
+    background: #222C3C;
+    border-radius: 2px;
+
+    position: absolute;
+    right: 0;
+}
+#message-list-box::-webkit-scrollbar-thumb{
+    background: #2398F0;
+    border-radius: 2px;
+}
+
+/*搜索框容器*/
+#message-search{
+    height: 70px;
+    width: 100%;
+
+    position: relative;
+
+    border: rgb(230, 233, 236) solid;
+    border-width:0 1px 1px 0;
+}
+/*输入框*/
+#message-search input{
+    width: 340px;
+    height: 36px;
+
+    margin: 17px 30px;
+
+    padding-left: 1em;
+
+    border: rgb(229, 232, 238) 1px solid;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    font-size: 14px;
+}
+#message-search input::-webkit-input-placeholder{
+    color: rgba(159, 169, 186, 0.8);
+}
+#message-search input::-moz-placeholder{
+    color: rgba(159, 169, 186, 0.8);
+}
+#message-search a{
+    display: inline-block;
+
+    height: 16px;
+    width: 16px;
+
+    position: absolute;
+
+    right: 44px;
+    top: 27px;
+
+    background: url("../images/Search icon.png") no-repeat;
+    background-size: cover;
+}
+
+/*消息列表*/
+#message-list{
+    width: 100%;
+}
+#message-list li{
+    width: 100%;
+    height: 131px;
+    padding: 15px 20px 15px 30px;
+
+    border: rgb(230, 233, 236) 1px solid;
+    border-width: 0 1px 1px 0;
+}
+#message-list li > div{
+    display: flex;
+    flex-wrap: nowrap;
+}
+/*头像*/
+.user-face{
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+}
+/*用户信息*/
+.user-information{
+    display: inline-block;
+    width: 100%;
+
+    padding:8px 0 0 20px ;
+}
+.user-information p{
+    position: relative;
+    line-height: 1;
+}
+/*用户名*/
+.username{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(88, 93, 104);
+}
+/*消息时间*/
+.message-time{
+    float: right;
+
+    font-size: 14px;
+    color: rgb(127, 143, 164);
+}
+/*来源媒体*/
+.user-from{
+    margin-top: 7px;
+
+    font-size: 14px;
+    color: rgb(181, 181, 181);
+}
+
+/*消息摘要容器*/
+.message-summary{
+    display: flex;
+    flex-wrap: nowrap;
+
+    margin-top: 10px;
+}
+/*消息摘要*/
+.message-summary-content{
+    height: 35px;
+
+    /*word-space:nowrap;*/
+    /*white-space: nowrap;*/
+
+    overflow: hidden;
+    display: -webkit-box;
+    /*display: block;*/
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    text-overflow: ellipsis;
+
+    font-size: 14px;
+    color: rgb(88, 93, 104);
+    line-height: 1.357;
+}
+
+/*消息数量气泡*/
+.user-message-num{
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+
+    flex-shrink:0;
+
+    margin-left:30px;
+    margin-top: 5px;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    background: rgb(37, 154, 242);
+
+    text-align: center;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+/*当前消息高亮*/
+#message-list .current-message{
+    border-left: rgb(35, 153, 241) 3px solid;
+}
+/*在线用户*/
+.status-online .username{
+    font-size: 16px;
+    color: rgb(35, 153, 241);
+}
+/*在线用户状态小蓝点*/
+.status-online .username::before{
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+
+    margin: 0px 8px 0 0;
+    position: relative;
+    bottom: 1px;
+
+    border-radius: 50%;
+    background-color: rgb(0, 170, 255);
+}
+
+
+/*------------------------------------------消息内容部分---------------------------------*/
+
+/*--------------------------------------------------头部*/
+#message-content-header{
+    height:70px;
+    width: 100%;
+
+    padding: 17px 20px 21px 29px;
+
+    border-bottom: rgb(230, 233, 236) 1px solid;
+}
+/*右侧按钮容器*/
+#message-operation-box{
+    display: inline-block;
+
+    line-height: 32px;
+
+    float: right;
+}
+/*用户名*/
+#current-message-username{
+
+    font-size: 18px;
+    color: rgb(88, 93, 104);
+}
+#current-message-username::after{
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+
+    margin: 0 0 0 10px;
+    position: relative;
+    bottom: 1px;
+
+    border-radius: 50%;
+    background-color: rgb(27, 185, 52);
+}
+
+/*页数*/
+#page-num{
+    font-size: 14px;
+    color: rgb(86, 104, 138);
+    margin-right: 16px;
+
+    vertical-align: top;
+}
+/*分割线*/
+#operation-divider{
+    display: inline-block;
+
+    margin: 0 23px;
+
+    background-color: rgb(206, 208, 218);
+    opacity: 0.302;
+
+    top: 98px;
+    width: 1px;
+    height: 32px;
+}
+
+
+/*前三个按钮*/
+#usual-operation,#paging{
+    height: 32px;
+
+    display: inline-block;
+    border: 1px solid rgb(206, 208, 218);
+    border-radius: 4px;
+
+    vertical-align: top;
+}
+#usual-operation a,#paging a{
+    display: inline-block;
+
+    height: 30px;
+    width: 35px;
+
+/*    background-image: -moz-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);*/
+
+    background-position:center center;
+
+}
+
+/*按钮图案*/
+#add-friend-icon{
+    background:rgb(241,243,247) url("../images/User icon.png") no-repeat;
+
+    border-radius: 4px 0 0 4px;
+}
+#upload-icon{
+    background:rgb(241,243,247) url("../images/Upload icon.png") no-repeat;
+
+    border: 1px solid rgb(206, 208, 218);
+    border-width: 0 1px;
+
+    border-radius: 0;
+}
+#delete-icon{
+    background:rgb(241,243,247) url("../images/Trash icon.png") no-repeat;
+
+    border-radius: 0 4px 4px 0;
+}
+#last-page{
+    background:rgb(241,243,247) url("../images/Arrow left.png") no-repeat;
+
+    border-right: 1px solid rgb(206, 208, 218);
+    border-radius: 4px 0 0 4px;
+}
+#next-page{
+    background:rgb(241,243,247) url("../images/Arrow right.png") no-repeat;
+    border-radius: 0 4px 4px 0;
+}
+/*--------------------------------------------------头部完*/
+
+/*-----------------------------------------------消息内容框*/
+
+
+
+/*-----------------------------------------------消息内容框*/
+#complete-message-box{
+    height: calc(100% - 70px);
+    width: 100%;
+
+    overflow: auto;
+}
+/*webkit滚动条*/
+#complete-message-box::-webkit-scrollbar{
+    visibility: visible;
+    width: 4px;
+    background: #222C3C;
+    border-radius: 2px;
+
+    position: absolute;
+    right: 0;
+}
+#complete-message-box::-webkit-scrollbar-thumb{
+    background: #2398F0;
+    border-radius: 2px;
+}
+.a-message{
+    margin:25px 57px 25px 30px;
+
+    display: flex;
+    flex-wrap: nowrap;
+}
+.user-face{
+    flex-shrink: 0;
+}
+.message-text{
+    padding-left: 20px;
+}
+
+/*用户名与list部分用户名样式一致，故class名相同*/
+
+.update-time{
+    margin-left:0.5em;
+
+    font-size: 14px;
+    color: rgb(127, 143, 164);
+}
+
+.a-message > div > div > p{
+    padding-top: 1em;
+
+    font-size: 14px;
+    color: rgb(88, 93, 104);
+    line-height: 1.357;
+    text-align: justify;
+}
+.message-image{
+    display: inline-block;
+
+    position: relative;
+
+    height: 100px;
+    width: 165px;
+    margin: 20px 13px 20px 0;
+
+    border-radius: 4px;
+}
+.message-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+.open-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+    height: 100px;
+    width: 165px;
+
+    border-radius: 4px;
+
+    background: rgba(1,1,1,0.5) url("../images/Open picture icon.png") center center no-repeat;
+    /*隐藏*/
+    opacity: 0;
+    transition: opacity 1s;
+}
+/*鼠标hover显示*/
+.message-image:hover .open-image{
+    opacity: 1;
+    transition: opacity 1s;
+}
+/*----------------------------------------分割线样式*/
+.text-divider{
+    width: 100%;
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    height: 1px;
+}
+.text-divider div{
+    display: inline-block;
+
+    margin: 10px 0;
+
+    height: 1px;
+    width: 100%;
+
+    background: rgba(159, 169, 186, 0.4);
+
+}
+.text-divider span{
+    display: inline-block;
+
+    margin: 0 20px;
+
+    font-size: 14px;
+    font-family: "Proxima Nova";
+    color: rgb(127, 143, 164);
+
+    white-space: nowrap;
+
+}
+
+/*蓝色分割线*/
+.blue-divider div{
+    background-color: rgba(35, 153, 241, 0.4);
+}
+.blue-divider span{
+    color: rgb(35, 153, 241);
+}
+
+/*-------------------------------------输入框样式*/
+#add-message{
+    width: 100%;
+    padding: 20px 30px;
+
+    display: flex;
+}
+#add-message a,
+#add-message input{
+    display: inline-block;
+    height: 55px;
+
+    border:solid 1px rgb(223, 227, 233);
+}
+#add-message a{
+    flex-shrink: 0;
+
+    width: 55px;
+
+    background:rgb(241,243,247) url("../images/Add icon.png") no-repeat center center;
+
+    border-radius: 4px 0 0 4px;
+/*    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(206, 208, 218);
+    background: -moz-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+    background: -webkit-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+    background: -ms-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);*/
+}
+#add-message input{
+    width: 100%;
+
+    border-radius: 0 4px 4px 0;
+
+    padding-left: 1em;
+
+    font-size: 14px;
+    color: rgb(88, 93, 104);
+
+}
+
+
+
+
+
+
+
+
+
+
