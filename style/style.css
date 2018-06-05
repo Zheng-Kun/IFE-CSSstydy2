@@ -43,7 +43,7 @@ body{
 }*/
 #app-menu-box,
 #nav-box,
-#message-box{
+.switch-box{
     height: 100%;
     /*float: left;*/
 
@@ -59,13 +59,15 @@ body{
     width: 250px;
 }
 
-#message-box{
+.switch-box{
     width: calc(100% - 350px);
-}
 
-#message-box{
     display: flex;
     flex-wrap: wrap;
+}
+
+.hideBox{
+    display: none;
 }
 #message-box-header{
     height: 80px;

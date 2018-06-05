@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>12-15天</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/musicOrMove.css">
+    <link rel="stylesheet" href="style/game.css">
 </head>
 <body>
     <!--全局容器-->
@@ -11,17 +13,17 @@
 
         <!--左侧菜单部分-->
         <div id="app-menu-box">
-            <div class="current-app" id="item1">
+            <div  class="current-app" id="item1">
                 <i></i>
-                <a href=""></a>
+                <a data-tab="0" class="tab-menu" href="JavaScript:void(0)"></a>
             </div>
-            <div id="item2">
+            <div class="tab-menu" id="item2">
                 <i></i>
-                <a href=""></a>
+                <a data-tab="1" class="tab-menu" href="JavaScript:void(0)"></a>
             </div>
-            <div id="item3">
+            <div class="tab-menu" id="item3">
                 <i></i>
-                <a href=""></a>
+                <a data-tab="2" class="tab-menu" href="JavaScript:void(0)"></a>
             </div>
             <div id="add-app">
                 <!--<i></i>-->
@@ -103,7 +105,7 @@
         </nav>
 
         <!--右侧白色区域部分-->
-        <div id="message-box">
+        <div id="message-box" class="switch-box">
 
             <!--白色头部部分-->
             <header id="message-box-header">
@@ -390,7 +392,13 @@
 
         </div>
 
+        <div class="switch-box hideBox" id="musicOrMove"></div>
+
+
+        <div class="switch-box hideBox" id="game"></div>
+
     </div>
 
+    <script src="script/switchTab.js"></script>
 </body>
 </html>
